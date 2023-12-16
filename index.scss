@@ -1,0 +1,899 @@
+:root {
+    --widthOrbit1: 300px;
+    --widthOrbit2: 470px;
+    --widthOrbit3: 630px;
+    --widthCircle: 70px;
+    --orbitAnimX1: 150px;
+    --orbitAnimX2: 230px;
+    --orbitAnimX3: 310px;
+    --metalball-lg: 65px;
+    --metalball-md: 50px;
+    --metalball-sm: 40px;
+    --metalball-xs: 30px;
+}
+.red {
+    background-color: red;
+}
+
+.main-bg {
+    background: url(banner.png) no-repeat, linear-gradient(45deg, rgb(0 0 0 / 30%), rgb(0 0 0 / 50%));
+    height: 100vh;
+    background-position: 60% 30%;
+    background-blend-mode: color;
+
+    .logo {
+        img {
+            max-width: 200px;
+        }
+    }
+
+    .banner-wrapper {
+        justify-content: center;
+
+        .banner-text {
+            max-width: 360px;
+        }
+
+        h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 5px;
+            margin: 0px;
+        }
+
+        h2, h3 {
+            text-transform: uppercase;
+            color: white;
+            margin: 0px;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            position: relative;
+            top: -20px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            position: relative;
+            top: 15px;
+        }
+
+        .main-text {
+            img {
+                width: 100px; 
+                position: relative;
+                top: -7px;
+                margin-right: 5px;
+                margin-left: 3px;
+            }
+        }
+    }
+
+    .sign-up {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        color: white;
+
+        .contact {
+            margin-right: 2rem;
+        }
+
+        span {
+            color: #bd7f05;
+        }
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #d0ae30 0%, #6400dd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.card-section {
+    position: relative;
+
+    .cards {
+        display: flex;
+        background: linear-gradient(135deg, #633ad0, #c58ba3);
+        color: white;
+        position: absolute;
+        min-width: 200px;
+        border-radius: 7px;
+        padding: 10px 16px;
+        align-items: center;
+        justify-content: space-around;
+
+        i {
+            font-size: 1.5rem;
+            background: #e42b89;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+        }
+
+        .text {
+            p {
+                font-size: 0.8rem;
+                margin: 0;
+
+                &:nth-child(2) {
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            top: 0vh;
+            left: 12vw;
+        }
+
+        &:nth-child(2) {
+            top: 18vh;
+            left: 18vw;
+        }
+
+        &:nth-child(3) {
+            top: 36vh;
+            left: 24vw;
+        }
+
+        &.right {
+            flex-direction: row-reverse;
+
+            &:nth-child(1) {
+                left: unset;
+                right: 12vw;
+            }
+    
+            &:nth-child(2) {
+                left: unset;
+                right: 18vw;
+            }
+    
+            &:nth-child(3) {
+                left: unset;
+                right: 24vw;
+            }
+        }
+    }
+}
+
+.section-heading {
+    display: flex;
+    color: white;
+
+    p {
+        font-size: 48px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .icon-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 0.5rem;
+        align-items: end;
+        position: relative;
+        top: -2px;
+
+        i {
+            font-size: 1.5rem;
+            color: #c8a13e;
+            height: 24px;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.features {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    background: #161a26;
+    color: white;
+
+    i {
+        font-size: 2.2rem;
+        color: #0eb4bd;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        cursor: pointer;
+        transition: 0.6s all;
+
+        &:hover {
+            box-shadow: 0px 0px 20px 4px #0eb4bd;
+        }
+    }
+}
+
+.orbit-wrapper {
+    overflow: hidden;
+    background: url(nightsky.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    position: relative;
+
+    .section-heading {
+        justify-content: center;
+    }
+
+    .orbit {
+        height: 500px;
+        position: relative;
+        top: 200px;
+        max-width: var(--widthOrbit3);
+
+        .circles {
+            width:var(--widthCircle);
+            height: var(--widthCircle);
+            background: linear-gradient(45deg, #633ad0, #c58ba3);
+            position: absolute;
+            left: 45%;
+            top: 50%;
+            z-index: 1;
+            border-radius: 50%;
+
+            &.delay {
+                animation-delay: 1s;
+            }
+        }
+        
+        .circle1 {
+            -webkit-animation: myOrbit1 4s linear infinite; 
+            -moz-animation: myOrbit1 4s linear infinite; 
+            -o-animation: myOrbit1 4s linear infinite;
+            animation: myOrbit1 4s linear infinite; 
+        }
+        
+        .circle2 {
+            -webkit-animation: myOrbit2 6s linear infinite; 
+            -moz-animation: myOrbit2 6s linear infinite; 
+            -o-animation: myOrbit2 6s linear infinite;
+            animation: myOrbit2 6s linear infinite;
+        }
+        
+        .circle3 {
+            -webkit-animation: myOrbit3 8s linear infinite; 
+            -moz-animation: myOrbit3 8s linear infinite; 
+            -o-animation: myOrbit3 8s linear infinite;
+            animation: myOrbit3 8s linear infinite; 
+        }
+
+        .orbits {
+            position: absolute;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            border-radius: 50%;
+
+            &.orbit1 {
+                width: var(--widthOrbit1);
+                height: var(--widthOrbit1);
+                left: 28%;
+                top: 27%;
+                -webkit-mask-image: radial-gradient( circle farthest-side at center, transparent calc(var(--widthOrbit1) * 0.5 - 10px), white calc(var(--widthOrbit1) * 0.5 - 10px) );
+                mask-image: radial-gradient( circle farthest-side at center, transparent calc(var(--widthOrbit1) * 0.5 - 10px), white calc(var(--widthOrbit1) * 0.5 - 10px) );
+            
+            }
+            
+            &.orbit2 {
+                width: var(--widthOrbit2);
+                height: var(--widthOrbit2);
+                left: 14%;
+                top: 10%;
+                -webkit-mask-image: radial-gradient( circle farthest-side at center, transparent calc(var(--widthOrbit2) * 0.5 - 10px), white calc(var(--widthOrbit2) * 0.5 - 10px) );
+                mask-image: radial-gradient( circle farthest-side at center, transparent calc(var(--widthOrbit2) * 0.5 - 10px), white calc(var(--widthOrbit2) * 0.5 - 10px) );
+            }
+            
+            &.orbit3 {
+                width: var(--widthOrbit3);
+                height: var(--widthOrbit3);
+                left: 0%;
+                top: -7%;
+                -webkit-mask-image: radial-gradient( circle farthest-side at center, transparent calc(var(--widthOrbit3) * 0.5 - 10px), white calc(var(--widthOrbit3) * 0.5 - 10px) );
+                mask-image: radial-gradient( circle farthest-side at center, transparent calc(var(--widthOrbit3) * 0.5 - 10px), white calc(var(--widthOrbit3) * 0.5 - 10px) );
+            }
+        }
+        
+        .orbits:after {
+            content: "";
+            position: absolute;
+            top: calc(-1 * 10px);
+            left: calc(-1 * 10px);
+            height: calc(100% + 10px * 2);
+            width: calc(100% + 10px * 2);
+            background: radial-gradient(circle, hsl(203, 100%, 53%) 0%, hsl(calc(203 + 110),100%,30%) 100%);
+            border-radius: calc(2 * 0px);
+            -webkit-animation: animatedgradient 5s ease-in-out infinite;
+            animation: animatedgradient 5s ease-in-out infinite;
+            background-size: 200% 200%;
+        }
+
+        .circle-with-text {
+            background: #303548;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 36%;
+            top: 37%;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                line-height: 26px;
+                padding-top: 1.5rem;
+                width: 50%;
+
+                p {
+                    margin: 0;
+                    font-size: 0.8rem;
+                    text-align: left;
+                    text-transform: uppercase;
+
+                    &.right {
+                        text-align: right;
+                    }
+                }
+
+                span {
+                    font-size: 2.5rem;
+                    font-weight: 500;
+                    text-align: center;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+
+    .floating-div {
+        background: #3b0a7d;
+        border: 3px solid #8a3d93;
+        color: white;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        position: absolute;
+        width: 20vw;
+        padding: 1rem 0;
+        border-radius: 10px;
+        top: 15vw;
+        left: 20vw;
+        z-index: 1;
+
+        .left-content {
+
+            .plan {
+                background: linear-gradient(135deg, #633ad0, #c58ba3);
+                padding: 3px 20px;
+                border-radius: 20px;
+                transform: rotate(-90deg);
+            }
+        }
+
+        .right-content {
+
+            i {
+                font-size: 1.5rem;
+                background: #1cb0c0;
+                border-radius: 50%;
+                height: 45px;
+                width: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .center-content {
+            margin-right: 1rem;
+
+            .bigger {
+                font-size: 2rem;
+            }
+
+            .big {
+                font-size: 1.5rem;
+            }
+
+            p {
+                margin: 0;
+                font-size: 0.7rem;
+            }
+
+            .bottom {
+                .upper {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+// Animation for orbits
+@-webkit-keyframes myOrbit1 {
+    from { -webkit-transform: rotate(0deg) translateX(var(--orbitAnimX1)) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(var(--orbitAnimX1)) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit1 {
+    from { -moz-transform: rotate(0deg) translateX(var(--orbitAnimX1)) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(var(--orbitAnimX1)) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit1 {
+    from { -o-transform: rotate(0deg) translateX(var(--orbitAnimX1)) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(var(--orbitAnimX1)) rotate(-360deg); }
+}
+
+@keyframes myOrbit1 {
+    from { transform: rotate(0deg) translateX(var(--orbitAnimX1)) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(var(--orbitAnimX1)) rotate(-360deg); }
+}
+
+@-webkit-keyframes myOrbit2 {
+    from { -webkit-transform: rotate(0deg) translateX(var(--orbitAnimX2)) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(var(--orbitAnimX2)) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit2 {
+    from { -moz-transform: rotate(0deg) translateX(var(--orbitAnimX2)) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(var(--orbitAnimX2)) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit2{
+    from { -o-transform: rotate(0deg) translateX(var(--orbitAnimX2)) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(var(--orbitAnimX2)) rotate(-360deg); }
+}
+
+@keyframes myOrbit2 {
+    from { transform: rotate(0deg) translateX(var(--orbitAnimX2)) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(var(--orbitAnimX2)) rotate(-360deg); }
+}
+
+@-webkit-keyframes myOrbit3 {
+    from { -webkit-transform: rotate(0deg) translateX(var(--orbitAnimX3)) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(var(--orbitAnimX3)) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit3 {
+    from { -moz-transform: rotate(0deg) translateX(var(--orbitAnimX3)) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(var(--orbitAnimX3)) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit3 {
+    from { -o-transform: rotate(0deg) translateX(var(--orbitAnimX3)) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(var(--orbitAnimX3)) rotate(-360deg); }
+}
+
+@keyframes myOrbit3 {
+    from { transform: rotate(0deg) translateX(var(--orbitAnimX3)) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(var(--orbitAnimX3)) rotate(-360deg); }
+}
+// End of Animation of orbits
+
+//Animation for border gradient
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+// End Animation for border gradient
+
+.about-container {
+    background: url(nightsky.jpg), linear-gradient(300deg, #45007c, #001a3d);
+    background-size: cover;
+    background-blend-mode: lighten;
+    color: white;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    .registration-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding-right: 5rem;
+
+        img {
+            max-width: 170px;
+        }
+
+        .registration-text-container {
+            background: linear-gradient(135deg, #633ad0, #c58ba3);
+            padding: 15px 60px 15px 20px;
+            border-radius: 25px;
+            position: relative;
+            top: -70px;
+            left: -50px;
+            
+            p {
+                margin: 0;
+
+                &.number {
+                    font-size: 2rem;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .about-text-wrapper {
+        .content {
+            width: 80%;
+            text-align: justify;
+        }
+
+        .button {
+            max-width: 120px;
+        }
+    }
+}
+
+.ball {
+    display: block;
+    background: black;
+    margin: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30px 20px, #c6e2ff, #300061);
+}
+.ball .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+    -webkit-transform: rotateX(90deg) translateZ(-150px);
+    -moz-transform: rotateX(90deg) translateZ(-150px);
+    -ms-transform: rotateX(90deg) translateZ(-150px);
+    -o-transform: rotateX(90deg) translateZ(-150px);
+    transform: rotateX(90deg) translateZ(-150px);
+    z-index: -1;
+}
+
+.stage {
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    -o-perspective: 1200px;
+    perspective: 1200px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    -o-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    position: absolute;
+    animation-name: moveballs;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+
+    &.top {
+        top: 80%;
+
+        &.left {
+            left: 10%;
+        }
+
+        &.center {
+            left: 40%
+        }
+
+        &.right {
+            left: 80%;
+        }
+
+        &.unposition {
+            left:75%;
+            top: 55%;
+        }
+    }
+
+    &.mid {
+        top: 150%;
+
+        &.left {
+            left: 25%;
+        }
+
+        &.center {
+            left: 55%
+        }
+
+        &.right {
+            left: 90%;
+        }
+
+        &.unposition {
+            left: 45%;
+            top: 135%;
+        }
+    }
+
+    &.bottom {
+        top: 220%;
+
+        &.left {
+            left: 5%;
+        }
+
+        &.center {
+            left: 45%
+        }
+
+        &.right {
+            left: 75%;
+        }
+
+        &.unposition {
+            left: 35%;
+            top: 215%;
+        }
+    }
+}
+
+.stage-lg {
+    width: var(--metalball-lg);
+    height: var(--metalball-lg);
+
+    .ball {
+        height: var(--metalball-lg);
+        width: var(--metalball-lg);
+    }
+}
+
+.stage-md {
+    width: var(--metalball-md);
+    height: var(--metalball-md);
+
+    .ball {
+        height: var(--metalball-md);
+        width: var(--metalball-md);
+    }
+}
+
+.stage-sm {
+    width: var(--metalball-sm);
+    height: var(--metalball-sm);
+
+    .ball {
+        height: var(--metalball-sm);
+        width: var(--metalball-sm);
+    }
+}
+
+.stage-xs {
+    width: var(--metalball-xs);
+    height: var(--metalball-xs);
+
+    .ball {
+        height: var(--metalball-xs);
+        width: var(--metalball-xs);
+    }
+}
+
+button {
+    position: relative;
+    padding: 0.2rem 1.5rem;
+    border-radius: 3.75rem;
+    line-height: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border: 1px solid #004eff;
+    background-image: linear-gradient(-180deg, #49e2ff 0%, #0049ff 100%);
+    box-shadow: 0 1rem 1.25rem 0 rgba(22, 75, 195, 0.5), 0 -0.25rem 1.5rem rgb(22 139 252) inset, 0 0.75rem 0.5rem rgba(255, 255, 255, 0.4) inset, 0 0.25rem 0.5rem 0 rgb(0 0 0) inset;
+    color: white;
+    margin-right: 1rem;
+
+    &.pink-btn {
+        border: 1px solid #bd7f05;
+    background-image: linear-gradient(-180deg, #ff6e00 0%, #ff973e 100%);
+    box-shadow: 0 1rem 1.25rem 0 rgb(255 153 0 / 50%), 0 -0.25rem 1.5rem rgb(165 116 21) inset, 0 0.75rem 0.5rem rgba(255, 255, 255, 0.4) inset, 0 0.25rem 0.5rem 0 rgb(78 58 0) inset;
+    }
+}
+
+button::before {
+    content: "";
+    display: block;
+    height: 0.25rem;
+    position: absolute;
+    top: 0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 0.5rem);
+    background: #fff;
+    border-radius: 100%;
+    opacity: 0.3;
+    background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0) 100%);
+}
+
+button::after {
+	content: "";
+	display: block;
+	height: 0.25rem;
+	position: absolute;
+	bottom: 0.75rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 7.5rem);
+	background: #fff;
+	border-radius: 100%;
+	
+	filter: blur(1px);
+	opacity: 0.05;
+	background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
+}
+
+@keyframes moveballs {
+    0%   {transform: translateY(0px);}
+    50% { transform: translateY(-1000px);}
+}
+
+@media only screen and (max-width: 700px) {
+    :root {
+        --widthOrbit1: 167px;
+        --widthOrbit2: 261px;
+        --widthOrbit3: 350px;
+        --widthCircle: 39px;
+        --orbitAnimX1: 83px;
+        --orbitAnimX2: 128px;
+        --orbitAnimX3: 172px;
+    }
+
+    .main-bg {
+        height: 100vh;
+        background-position: 43% 0%;
+
+        .logo {
+            img {
+                max-width: 120px;
+            }
+        }
+
+        .sign-up {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .card-section {
+        padding-top: 15vh;
+
+        .cards {
+            position: unset;
+            max-width: 150px;
+            min-width: fit-content;
+            margin: 1rem 0;
+
+            i {
+                font-size: 0.8rem;
+                height: 30px;
+                width: 30px;
+            }
+
+            .text {
+                p {
+                    font-size: 0.6rem;
+
+                    &:nth-child(2) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    } 
+
+    .features {
+        .col {
+            min-width: 50%;
+        }
+    }
+
+    .orbit-wrapper {
+
+        .floating-div {
+            width: 90vw;
+            top: 48vw;
+            left: unset;
+        }
+        .orbit {
+            top: 233px;
+            .orbits {
+                &.orbit1 {
+                    top: 36%;
+                }
+                &.orbit2 {
+                    top: 27%;
+                }
+                &.orbit3 {
+                    top: 18%;
+                }
+            }
+
+            .circle-with-text {
+                width: 111px;
+                height: 111px;
+                top: 43%;
+
+                .text {
+                    line-height: 14px;
+                    padding-top: 0.5rem;
+                    width: 42%;
+
+                    p {
+                        font-size: 0.5rem;
+                    }
+
+                    span {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }  
+
+    .about-container {
+        .registration-wrapper {
+            .registration-text-container {
+                padding: 15px 20px 15px 20px;
+
+                p {
+                    font-size: 0.7rem;
+
+                    &.number {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .about-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .content {
+                width: 100%;
+            }
+        }
+    }  
+}
