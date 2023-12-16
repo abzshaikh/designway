@@ -1,6 +1,6 @@
 Hello
 
-I have used HTML, CSS, Jquery, Bootstrap and animate on scroll library for scroll animation
+I have used HTML, SCSS, Jquery, Bootstrap and animate on scroll library for scroll animation
 
 Challenge: 
 To implement the circular orbit and animate it
